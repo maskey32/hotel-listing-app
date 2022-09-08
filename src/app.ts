@@ -12,7 +12,7 @@ import todosRouter from './routes/todos';
 import viewsRouter from './routes/viewsRoute';
 import listingRouter from './routes/listingRoute';
 
-db.sync({force: true}).then(() => {
+db.sync().then(() => {
   console.log('Connected to database');
 }).catch(err => {
   console.log(err);
@@ -31,11 +31,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/', indexRouter);
-app.use('/user', viewsRouter);
+// app.use('/', indexRouter);
+// app.use('/user', viewsRouter);
 app.use('/api/user', userRouter);
 app.use('/api/listing', listingRouter);
 app.use('/api/todos', todosRouter);
+
+// Connecting to the frontend
+const clientPath = path.join(__dirname, '../frontend/build');
+app.use(express.static(clientPath));
+
+// Sending the frontend to the client to view
+app.get('/*', (_req, res) => {
+  res.sendFile(path.join(__dirname + '../frontend/build/index.html'))
+})
 
 // catch 404 and forward to error handler
 app.use(function(req: Request, res: Response, next: NextFunction) {

@@ -1,0 +1,35 @@
+#hotels {
+    display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    grid-gap: 1.5rem;
+}
+
+/* #footer-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(134, 203, 30);
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.4rem;
+} */
+
+#head {
+    text-align: center;
+    margin-top: 4rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: rgb(120, 184, 23);
+}
+
+#ptag {
+    text-align: center;
+    font-size: 1.5rem;
+}

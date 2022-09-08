@@ -1,0 +1,24 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #header {
+    color: #fff;
+    font-size: 35px;
+}
+
+#service {
+    color: greenyellow;
+    font-weight: 700;
+} */
+
+
+.container {
+    background-color: rgb(3, 47, 33);
+    /* height: calc(100vh - 500px); */
+    height: 40vmin;
+    width: 100%;
+    padding: 0.7rem 7rem;
+}
